@@ -30,8 +30,8 @@ pipeline {
 
         stage('Deployment') {
             steps {
-                sh 'sshpass -p "gamut" scp target/flipkart.war gamut@172.17.0.3:/home/gamut/Distros/apache-tomcat-9.0.78/webapps'
-                sh 'sshpass -p "gamut" ssh gamut@172.17.0.3 "/home/gamut/Distros/apache-tomcat-9.0.78/bin/startup.sh"'
+                sh 'scp /.jenkins/workspace/sonix/target/flipkart-1.0-SNAPSHOT.jar root@ip-172-31-34-207:/test_env/test-server/webapps'
+                
             }
         }
     }
